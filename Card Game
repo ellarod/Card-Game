@@ -1,0 +1,73 @@
+9/16/2023
+CSE 7 Fall 23: Lab3 - Playing Cards using Selection Statements
+Chooses a card from a deck of cards
+VSCode / JDK 11
+*/
+
+public class Card{
+    public static void main(String[]args){
+
+        int cardNumber = (int)(Math.random()*52); //0-51
+
+        String suitName;
+        String cardIdentity = "";
+
+        int suitNum = cardNumber/13; //0
+        
+        if (suitNum == 0){
+            suitName = "diamonds";
+        } else if (suitNum == 1){
+            suitName = "clubs";
+        } else if (suitNum == 2) {
+            suitName = "hearts";
+        } else {
+            suitName = "spades"; 
+        }
+        
+        int identityNum = cardNumber % 13;
+
+        switch(identityNum){
+            case 0: 
+                cardIdentity = "Ace";
+                break;
+            case 1: 
+                cardIdentity = "2";
+                break;
+            case 2: 
+                cardIdentity = "3";
+                break;
+            case 3: 
+                cardIdentity = "4";
+                break;
+            case 4: 
+                cardIdentity = "5";
+                break;
+            case 5: 
+                cardIdentity = "6";
+                break;
+            case 6: 
+                cardIdentity = "7";
+                break;
+            case 7: 
+                cardIdentity = "8";
+                break;
+            case 8: 
+                cardIdentity = "9";
+                break;
+            case 9: 
+                cardIdentity = "10";
+                break;
+            case 10: 
+                cardIdentity = "Jack";
+                break;
+            case 11: 
+                cardIdentity = "Queen";
+                break;
+            case 12: 
+                cardIdentity = "King";
+                break;
+        }    
+
+        System.out.print ("You picked the " + cardIdentity + " of " + suitName);
+    }
+}
